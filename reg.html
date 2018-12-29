@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>注册页面</title>
+	</head>
+	<body>
+		<form id="form" action="reg.php" method="post">
+			用户名：<input type="text" name="username" id="username" value="" /><br />
+			密码：<input type="password" name="pwd" id="pwd" value="" /><br />
+			确认密码：<input type="password" name="pwd2" id="pwd2" value="" /><br />
+			<input type="submit" name="submit" value="注册" id="subBtn"/>
+		</form>
+	</body>
+	<script type="text/javascript">
+		form.onsubmit = function(){
+			
+			if(username.value == ""){
+				username.focus();
+				alert("请输入用户名");
+				return false;
+			}
+			if(pwd.value == "" || pwd2.value == ""){
+				alert("请输入密码");
+				pwd.focus()
+				return false;
+			}
+			if(pwd.value != pwd2.value){
+				alert("密码不一致，请重新输入");
+				pwd.focus();
+				return false;
+			}
+		}
+	</script>
+</html>
